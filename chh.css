@@ -2,7 +2,7 @@
  * @name ChhMembers
  * @author the chh guys
  * @description all of us
- * @version 1.2.5
+ * @version 1.6.0
 */
 
 /* //// fonts //// */
@@ -11,36 +11,81 @@
 
 @font-face {
     font-family: 'ihatecomicsans';
-    src: url("https://raw.githubusercontent.com/AndrewIdot/chhcss/refs/heads/main/fnt/ihatecomicsans.ttf") format('truetype');
+    src: url("https://raw.githubusercontent.com/jelleejamm/chhcss/refs/heads/main/fnt/ihatecomicsans.ttf") format('truetype');
 }
 
 @font-face {
-  font-family: 'adler';
-  src: url("https://raw.githubusercontent.com/AndrewIdot/chhcss/refs/heads/main/fnt/adler.ttf");
+    font-family: 'workear';
+    src: url("https://raw.githubusercontent.com/jelleejamm/chhcss/refs/heads/main/fnt/workear.ttf") format('truetype');
+}
+
+@font-face {
+  font-family: 'mom';
+  src: url("https://raw.githubusercontent.com/jelleejamm/chhcss/refs/heads/main/fnt/mom.ttf");
 }
 
 @font-face {
     font-family: 'derzoxrain';
-    src: url("https://raw.githubusercontent.com/AndrewIdot/chhcss/refs/heads/main/fnt/rainw.ttf") format('truetype');
+    src: url("https://raw.githubusercontent.com/jelleejamm/chhcss/refs/heads/main/fnt/rainw.ttf") format('truetype');
 }
 
 @font-face {
     font-family: 'lucidaconsolebu';
-    src: url("https://raw.githubusercontent.com/AndrewIdot/chhcss/refs/heads/main/fnt/lucon.ttf") format('truetype');
+    src: url("https://raw.githubusercontent.com/jelleejamm/chhcss/refs/heads/main/fnt/lucon.ttf") format('truetype');
 }
 
 @font-face {
 	font-family: 'comicsanslol';
-	src: url("https://raw.githubusercontent.com/AndrewIdot/chhcss/refs/heads/main/fnt/Comic%20Sans%20MS.ttf") format('truetype');
+	src: url("https://raw.githubusercontent.com/jelleejamm/chhcss/refs/heads/main/fnt/Comic%20Sans%20MS.ttf") format('truetype');
 }
 
 @font-face {
 	font-family: 'doctoramigo';
-	src: url("https://raw.githubusercontent.com/AndrewIdot/chhcss/refs/heads/main/fnt/amiga.ttf") format('truetype');
+	src: url("https://raw.githubusercontent.com/jelleejamm/chhcss/refs/heads/main/fnt/amiga.ttf") format('truetype');
 }
 
+@font-face {
+	font-family: 'typewriter';
+	src: url("https://raw.githubusercontent.com/jelleejamm/chhcss/refs/heads/main/fnt/typewriter.ttf") format('truetype');
+}
 
 /* //// font end //// */
+
+/* THE CRACKHEAD HOUSE */
+
+.blobContainer_e5445c:has(.wrapper__6e9f8[data-list-item-id="guildsnav___1348278280360427581"]) {
+	box-shadow: 0 0 10px yellow;
+	background-color: yellow;
+	border-radius: 29%;
+}
+
+.link__2ea32[data-list-item-id="channels___1348630195082625084"], .link__2ea32[data-list-item-id="channels___1348630195082625084"] .name__2ea32  {
+	animation: peculiar 5s ease 0s infinite normal forwards;
+	color: #00FF00 !important;
+}
+
+.link__2ea32[data-list-item-id="channels___1398578313034862623"] .name__2ea32 .text-md\/medium_cf4812  {
+	font-family: "chancur", arial, monospace !important;
+	font-style: italic;
+}
+
+.link__2ea32[data-list-item-id="channels___1348278598179623016"] {
+	filter: blur(1px);
+}
+
+@keyframes peculiar {
+	0%, 
+	50%,
+	100%
+	{
+		transform: scale(0.2, 0.2) rotate(-5deg);
+	}
+
+	25%, 
+	75% {
+		transform: scale(1, 1) rotate(0);
+	}
+}
 
 /* VEA_REBIRTH */
 
@@ -64,6 +109,7 @@ li[data-author-id="1334564142891143259"] .headerText_c19a55 .username_c19a55 {
     font-size: 0;
 } 
 
+/* Make username appear consistent accross all servers; below comments kept for archival's sake*/
 li[data-author-id="1334564142891143259"] .headerText_c19a55 .username_c19a55::after {
     content: "Vea Ortis";
 	font-family: "Lucida Console", "lucidaconsolebu" !important;
@@ -85,11 +131,12 @@ li[data-author-id="1334564142891143259"] .username_c19a55 {
 } 
 
 li[data-author-id="1334564142891143259"] .clanTagChiplet_c19a55,
-li[data-author-id="1334564142891143259"]  .clickable_ee71ee {
+li[data-author-id="1334564142891143259"] .clickable_ee71ee {
     display: none;
 }
 
-[data-author-id="1334564142891143259"] .messageContent_c19a55::before {
+/* Add a personalized prefix to every message */
+li[data-author-id="1334564142891143259"] .messageContent_c19a55::before {
     display: inline-block;
     font-family: "MS Gothic";
     font-size: 0.80em;
@@ -99,26 +146,56 @@ li[data-author-id="1334564142891143259"]  .clickable_ee71ee {
 
 /* ICE */
 
-[data-author-id="467270876673605642"] .message__5126c {
+/* The bulk of the style, make Ice's messages appear like paper that's been typed on */
+li[data-author-id="467270876673605642"] .message__5126c {
     -webkit-text-fill-color: black;
     font-weight: bold;
     text-transform: uppercase;
-    font-family: "adler", "typewriter";
+    font-family: "mom", "typewriter";
     vertical-align: bottom;
-    background: linear-gradient( rgba(0, 0, 0, 0.20), rgba(0, 0, 0, 0.20) ), url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRohl7eCgheWfgPflpDzh9tVKIGbAVTCJ2AWw&s') !important;
+    background: linear-gradient( rgba(0, 0, 0, 0.20), rgba(0, 0, 0, 0.20) ), url("https://raw.githubusercontent.com/jelleejamm/chhcss/refs/heads/main/img/icepaper.png") !important;
     background-size: 15% !important;
     background-color: #000;
-    border: dashed black 1.5px;
+    border: dashed black 2px;
 
     & strong {
         font-weight: bolder;
     }
+}
+/* Porting over of Angela's code that makes her messages appear connected. Should be easiest to do on Ice, as
+it doesn't need much effort to look good */
+i[data-author-id="467270876673605642"]:not(:has(+ li .groupStart__5126c)) .groupStart__5126c,
+li[data-author-id="467270876673605642"]:not(:has(+ div .divider__5126c)) .groupStart__5126c,
+li[data-author-id="467270876673605642"]:not(:has(+ .scrollerSpacer__36d07)) .groupStart__5126c {
+    border-bottom-style: none
+}
+
+li[data-author-id="467270876673605642"] .message__5126c:not(.groupStart__5126c) {
+    border-bottom-style: none;
+    border-top-style: none;
+}
+
+li[data-author-id="467270876673605642"]:has(+ li .groupStart__5126c) .message__5126c,
+li[data-author-id="467270876673605642"]:has(+ .divider__5126c) .message__5126c,
+li[data-author-id="467270876673605642"]:has(+ .scrollerSpacer__36d07) .message__5126c {
+    border-bottom: dashed black 2px !important;
+}
+
+/* I'll be forreal I have no fucking clue what this does, but it'll probably break something if I remove it */
+li[data-author-id="467270876673605642"] .messageContent_c19a55 {
+    vertical-align: middle;
+}
+
+/* In order: Un-round corners of all elements, underline timestamps, and remove unfitting elements. */
+li[data-author-id="467270876673605642"] * {
+    border-radius: 0px;
 }
 
 li[data-author-id="467270876673605642"] .timestamp_c19a55 {
     text-decoration: underline;
 }
 
+/* Remove unfitting elements */
 li[data-author-id="467270876673605642"] .avatar_c19a55,
 li[data-author-id="467270876673605642"] .reactions__23977,
 li[data-author-id="467270876673605642"] .timestampVisibleOnHover_c19a55,
@@ -126,19 +203,27 @@ li[data-author-id="467270876673605642"] .repliedMessageClickableSpine_c19a55 {
     display: none;
 }
 
-
-[data-author-id="467270876673605642"] .messageContent_c19a55::before {
+/* Add a personalized prefix to each individual message. */
+li[data-author-id="467270876673605642"] .messageContent_c19a55::before {
     display: inline-block;
     font-size: 1em;
     content: "- ";
     transform: scale(1.4, 0.9);
 }
 
-li[data-author-id="467270876673605642"] .markup__75297 {
-    left: -50px;
+/* Remove padding to eliminate negative space left by a removed PFP + Move reply text left slightly to hide prefix */
+/* Works much better than the last fix. Will apply further */
+
+li[data-author-id="467270876673605642"] .cozyMessage__5126c {
+    padding-left: 20px;
 }
 
-li[data-author-id="467270876673605642"] .edited_c19a55{
+li[data-author-id="467270876673605642"] .repliedTextPreview_c19a55 .messageContent_c19a55 {
+    left: -10px !important;
+}
+
+/* Two blocks below perform some strange jankery in order to alter (EDITED) to (REVISED) */
+li[data-author-id="467270876673605642"] .edited_c19a55 {
     font-size: 0px;
 }
 
@@ -148,48 +233,74 @@ li[data-author-id="467270876673605642"] .edited_c19a55::after {
 	text-decoration: underline;
 }
 
-li[data-author-id="467270876673605642"] .c19a557985eb7793-edited {
-    font-size: 0px;
-}
-
-li[data-author-id="467270876673605642"] .f61d60ed65f9a128-wrapper {
+/* Recolor wrappers (pings, channelmentions, etc) to yellow for a highlighter look */
+li[data-author-id="467270876673605642"] .wrapper_f61d60 {
     background-color: rgba(255, 255, 0, 0.303);
 }
 
-li[data-author-id="467270876673605642"] .c19a557985eb7793-edited::after {
-    content: "(REVISED)";
-	font-size: 10px;
-	text-decoration: underline;
-}
-
-li[data-author-id="467270876673605642"] ._299eb87491f4b6d1-spoilerMarkdownContent {
+/* Make spoiler-text into a solid black box. */
+li[data-author-id="467270876673605642"] .spoilerMarkdownContent__299eb {
     background-color: var(--__current--spoiler-background-color);
     filter: brightness(0%);
     border-radius: 0%;
 }
-/* V-Note: there has GOT to be a better way to do this */
 
-li[data-author-id="467270876673605642"] .af017ab847f75d02-originalLink {
-    border: black solid;
-    border-width: 4px 4px 10px 4px;
+/* Add a file-photo style border to images - should be modified to work with videos and other embeds, too */
+li[data-author-id="467270876673605642"] .mosaicItem__6c706 {
+    box-sizing: border-box;
+    border: #E1E1E1 solid;
+    border-width: 8px 8px 18px 8px;
 }
 
 /* ANGELA */
 
+li[data-author-id="636050805103001650"] {
+	--text-subtle: black !important;
+}
+
+/* Apply custom background - Should be modified as to not break the below blocks - See next comment for details */
 li[data-author-id="636050805103001650"] .message__5126c {
     background-color: #C2AEEF;
-    background-image: url('https://raw.githubusercontent.com/AndrewIdot/chhcss/refs/heads/main/img/angelapolka.png') !important;
-    background-size: 40% !important;
+    background-image: url('https://raw.githubusercontent.com/jelleejamm/chhcss/refs/heads/main/img/angelapolka.png') !important;
+    background-size: 300px 300px !important;
     border: 4px solid #DACCFF;
     border-radius: 15px;
 }
 
+/* The four blocks below perform some nifty jankery in order to make message groups appear connected */
+/* Misalisgns the background sometimes, but is very clever work. Should see about porting this to other members' styles - and fixing the background bug */
+li[data-author-id="636050805103001650"]:not(:has(+ li .groupStart__5126c)) .groupStart__5126c,
+li[data-author-id="636050805103001650"]:not(:has(+ div .divider__5126c)) .groupStart__5126c,
+li[data-author-id="636050805103001650"]:not(:has(+ .scrollerSpacer__36d07)) .groupStart__5126c {
+	border-bottom-style: none;
+	border-bottom-left-radius: 0; border-bottom-right-radius: 0;
+}
+
+li[data-author-id="636050805103001650"] .message__5126c:not(.groupStart__5126c) {
+    border-bottom-style: none;
+	border-top-style: none;
+    border-radius: 0;
+}
+
+li[data-author-id="636050805103001650"]:has(+ li .groupStart__5126c) .message__5126c,
+li[data-author-id="636050805103001650"]:has(+ .divider__5126c) .message__5126c,
+li[data-author-id="636050805103001650"]:has(+ .scrollerSpacer__36d07) .message__5126c {
+    border-bottom: 4px solid #DACCFF !important;
+	border-bottom-left-radius: 15px !important; border-bottom-right-radius: 15px !important;
+}
+
+.divider__5126c + li[data-author-id="636050805103001650"] .message__5126c {
+    border-top: 4px solid #DACCFF;
+	border-top-left-radius: 15px; border-top-right-radius: 15px;
+}
+
+/* Three blocks below all control the custom cursor when you hover over any message */
 li[data-author-id="636050805103001650"] {
-	cursor: url("https://raw.githubusercontent.com/AndrewIdot/chhcss/refs/heads/main/img/cur-dreweehand.png"), auto;
+	cursor: url("https://raw.githubusercontent.com/jelleejamm/chhcss/refs/heads/main/img/cur-dreweehand.png"), auto;
 }
 
 li[data-author-id="636050805103001650"]:active {
-    cursor: url("https://raw.githubusercontent.com/AndrewIdot/chhcss/refs/heads/main/img/cur-dreweehandclosed.png"), auto !important;
+    cursor: url("https://raw.githubusercontent.com/jelleejamm/chhcss/refs/heads/main/img/cur-dreweehandclosed.png"), auto !important;
 }
 
 li[data-author-id="636050805103001650"] .markup__75297 .anchor_edefb8:hover, 
@@ -200,15 +311,15 @@ li[data-author-id="636050805103001650"] .clickable_c19a55:hover,
 li[data-author-id="636050805103001650"] .clickable__10651,
 li[data-author-id="636050805103001650"] .clickable_af017a:hover,
 li[data-author-id="636050805103001650"] .originalLink_af017a:hover {
-    cursor: url("https://raw.githubusercontent.com/AndrewIdot/chhcss/refs/heads/main/img/cur-dreweehandpoint.png"), auto;
+    cursor: url("https://raw.githubusercontent.com/jelleejamm/chhcss/refs/heads/main/img/cur-dreweehandpoint.png"), auto;
 }
 
+/* 5 blocks below apply and properly color custom font */
+/* Font has to be applied accross all possible markdown, headers especially will break it */
 li[data-author-id="636050805103001650"] .messageContent_c19a55 {
     color: black;
-    font-family: 'ihatecomicsans', Arial, sans-serif !important;
-    font-weight: bold;
+    font-family: 'workear', Arial, sans-serif !important;
     font-size: 16px;
-    letter-spacing: 1px;
 
     & strong {
         font-size: 20px;
@@ -219,52 +330,51 @@ li[data-author-id="636050805103001650"] .markup__75297 h1,
 li[data-author-id="636050805103001650"] .markup__75297 h2,
 li[data-author-id="636050805103001650"] .markup__75297 h3 {
     color: black;
-    font-family: 'ihatecomicsans', Arial, sans-serif !important;
-    font-weight: bold;
+    font-family: 'workear', Arial, sans-serif !important;
 }
 
 li[data-author-id="636050805103001650"] .markup__75297 small span {
     color: black;
-    font-family: 'ihatecomicsans', Arial, sans-serif !important;
-    font-weight: normal;
+    font-family: 'workear', Arial, sans-serif !important;
 }
 
 li[data-author-id="636050805103001650"] .markup__75297 small span strong span {
     color: black;
-    font-family: 'ihatecomicsans', Arial, sans-serif !important;
-    font-weight: bolder;
+    font-family: 'workear', Arial, sans-serif !important;
     font-size: 14px;
 }
 
 li[data-author-id="636050805103001650"] .tagText__10651, 
-li[data-author-id="636050805103001650"] .repliedMessage_c19a55 .username_c19a55, 
 li[data-author-id="636050805103001650"] .timestamp_c19a55, 
 li[data-author-id="636050805103001650"] .timestampInline_c19a55,
 li[data-author-id="636050805103001650"] .repliedTextPreview_c19a55
 {
     color: black !important;
-    font-family: 'ihatecomicsans', Arial, sans-serif !important;
-    font-weight: bold;
-    letter-spacing: 1px;
+    font-family: 'workear', Arial, sans-serif !important;
+}
+
+/* 3 blocks below individually style replies */
+li[data-author-id="636050805103001650"] .repliedMessage_c19a55 .username_c19a55 {
+	border-radius: 25px;
+	border: 4px solid #DACCFF;
+	text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+	background-color: #A58FE0 !important;
+	padding-left: 5px;
+	padding-right: 5px;
+    font-family: 'workear', Arial, sans-serif !important;
 }
 
 li[data-author-id="636050805103001650"] .headerText_c19a55 .username_c19a55 {
 	border-radius: 25px;
 	border: 4px solid #DACCFF;
 	text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-	background-color: #C2AEEF !important;
+	background-color: #A58FE0 !important;
 	padding-left: 5px;
 	padding-right: 5px;
-    font-family: 'ihatecomicsans', Arial, sans-serif !important;
-    font-weight: bold;
-    letter-spacing: 1px;
+    font-family: 'workear', Arial, sans-serif !important;
 }
 
-li[data-author-id="636050805103001650"] ._752971923a1e6683-codeActions {
-    color: white !important;
-}
-
-li[data-author-id="636050805103001650"] .repliedMessage_c19a55,
+li[data-author-id="636050805103001650"] .repliedTextPreview_c19a55,
 li[data-author-id="636050805103001650"] .repliedTextContentTrailingIcon_c19a55,
 li[data-author-id="636050805103001650"] .repliedMessageContentHovered_c19a55,
 li[data-author-id="636050805103001650"] .channelMention,
@@ -274,6 +384,10 @@ li[data-author-id="636050805103001650"] .headerText__122e4,
 li[data-author-id="636050805103001650"] .reactionCount__23977,
 li[data-author-id="636050805103001650"] .altText__0f481 {
     color: black !important;
+}
+/* Fix aditional markdown */
+li[data-author-id="636050805103001650"] ._752971923a1e6683-codeActions {
+    color: white !important;
 }
 
 li[data-author-id="636050805103001650"] .quote__122e4 {
@@ -296,11 +410,6 @@ li[data-author-id="636050805103001650"] .repliedTextContentLeadingIcon_c19a55 pa
 	fill: black !important;
 }
 
-li[data-author-id="636050805103001650"] .emoji {
-    background-color: #353748;
-    border-radius: 4px;
-}
-
 li[data-author-id="636050805103001650"] code {
     background-color: #353748 !important;
     color:white !important;
@@ -320,24 +429,26 @@ li[data-author-id="636050805103001650"] attachmentLink {
 
 li[data-author-id="636050805103001650"] .messageContent_c19a55 .anchor_edefb8,
 li[data-author-id="636050805103001650"] .messageContent_c19a55 .anchorUnderlineOnHover_edefb8 {
-    color: #8C49FF !important;
+    color: #491F91 !important;
 }
 
 li[data-author-id="636050805103001650"] .headerText_c19a55 .badge__10651 {
-    content: url("https://raw.githubusercontent.com/AndrewIdot/chhcss/refs/heads/main/img/favicon.png")
+    content: url("https://raw.githubusercontent.com/jelleejamm/chhcss/refs/heads/main/img/favicon-jj.png")
 }
 
+/* 2-boxes customize server tag */
 li[data-author-id="636050805103001650"] .headerText_c19a55 .tagText__10651 {
     font-size: 0;
 }
 
 li[data-author-id="636050805103001650"] .headerText_c19a55 .tagText__10651::after {
-    content: "gay";
+    content: "JLJ";
     font-size: 12px;
 }
 
 /* DERZOX */
 
+/* Bulk of the theme, make the text box resemble that of Rain World */
 li[data-author-id="714529404432154734"] .message__5126c {
     border-radius: 10px;
     background-color: black !important;
@@ -353,6 +464,24 @@ li[data-author-id="714529404432154734"] .markup__75297 h3
     font-family: "derzoxrain";
 }
 
+/* Fix negative space */
+li[data-author-id="714529404432154734"] .cozyMessage__5126c {
+    padding-left: 40px;
+}
+
+li[data-author-id="714529404432154734"] .repliedMessage_c19a55 {
+    left: 20px;
+}
+
+li[data-author-id="714529404432154734"] .repliedMessageClickableSpine_c19a55 {
+    width: 20px;
+    left: -20px;
+}
+
+
+/* Commented this out and left it here as an example of the nightmare we used to be doing */
+/* Do not do this! */
+/*
 li[data-author-id="714529404432154734"] .messageContent_c19a55,
 li[data-author-id="714529404432154734"] .header_c19a557,
 li[data-author-id="714529404432154734"] .visualMediaItemContainer_f4758a,
@@ -373,10 +502,11 @@ li[data-author-id="714529404432154734"] .repliedMessageClickableSpine_c19a55 {
     width: 1%;
     left: -8px;
 }
+*/
 
 li[data-author-id="714529404432154734"] .avatar_c19a55,
 li[data-author-id="714529404432154734"] .avatar_c19a55Decoration {
-    visibility: hidden;
+    display: none !important;
 }
 
 /* JOSE */
@@ -403,26 +533,14 @@ li[data-author-id="328514436245618699"] {
 */
 }
 
-/* CNTRPL */
-
-li[data-author-id="212160419769483265"] {
-    font-family: "M PLUS Rounded 1c", sans-serif;
-    border-left: 1px solid #B5EDFF;
-    background: linear-gradient(to right, #B5EDFF30, #B5EDFF00);
-}
-
-li[data-author-id="212160419769483265"] code {
-    background-color: #353748 !important;
-    font-weight: normal;
-    letter-spacing: 0px;
-}
-
 /* BOYCRAFT */
 
 li[data-author-id="844289867714134097"] {
 	font-family: "doctoramigo" !important;
 }
 
+/* Create the funny striped at the top of each message */
+/* Not quite unusual, but definitely spooky looking */
 li[data-author-id="844289867714134097"] .groupStart__5126c {
 	/* angela note jesus christ */
     background-image: linear-gradient(to bottom, 
@@ -450,6 +568,7 @@ li[data-author-id="844289867714134097"] .groupStart__5126c {
 	padding-bottom: -20px;
 }
 
+/* Ditto above, but modified to better accomodate a reply */
 li[data-author-id="844289867714134097"] .hasReply_c19a55 {
 	/* angela note jesus christ */
 	background-image: unset;
@@ -514,53 +633,24 @@ li[data-author-id="844289867714134097"] .hasReply_c19a55 .avatar_c19a55 {
 removing if i figure out how to make it not be placed weird*/
 
 li[data-author-id="844289867714134097"] .vc-message-decorations-wrapper,
-li[data-author-id="844289867714134097"] .timestamp_c19a55Inline,
+li[data-author-id="844289867714134097"] .timestamp_c19a55,
 li[data-author-id="844289867714134097"] .chipletContainerInline__10651
 {
 	display: none;
 }
 
+/*/////////// funny emojis //////////////*/
 
-/* 
----------- NON-CHH PEOPLE HERE ---------- 
-im aware that this was sorta only for chh but i wanted to do some
-for some friends too without having to have like 50 trillion
-different .css files to have to update, you can add others
-here too if you wish
-*/
-
-/* NRN */
-
-li[data-author-id="1228671529881964636"] .message__5126c {
-    background-image: linear-gradient(180deg, #000000 50%, #00d500 100%) !important;
-    border: 2px solid black;
-    border-radius: 10px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+.emoji[data-name=":kiwi:"] {
+	content-visibility: hidden;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-image: url("https://raw.githubusercontent.com/jelleejamm/chhcss/refs/heads/main/img/kiwi.svg");
 }
 
-li[data-author-id="1228671529881964636"] .messageContent_c19a55 {
-    color: white;
-    font-family: 'comicsanslol', Arial, sans-serif !important;
-}
-
-li[data-author-id="1228671529881964636"] .markup__75297 h1,
-li[data-author-id="1228671529881964636"] .markup__75297 h2,
-li[data-author-id="1228671529881964636"] .markup__75297 h3,
-li[data-author-id="1228671529881964636"] .markup__75297 small span,
-li[data-author-id="1228671529881964636"] .markup__75297 small span strong span {
-    color: white;
-    font-family: 'comicsanslol', Arial, sans-serif !important;
-}
-
-li[data-author-id="1228671529881964636"] .tagText__10651, 
-li[data-author-id="1228671529881964636"] .username_c19a55, 
-li[data-author-id="1228671529881964636"] .timestamp_c19a55, 
-li[data-author-id="1228671529881964636"] .timestamp_c19a55Inline,
-li[data-author-id="1228671529881964636"] .repliedTextPreview_c19a55
-{
-    color: white !important;
-    font-family: 'comicsanslol', Arial, sans-serif !important;
-    font-weight: bold;
-    letter-spacing: 1px;
-}
+.emoji[data-name=":troll:"] {
+	content-visibility: hidden;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-image: url("https://raw.githubusercontent.com/jelleejamm/chhcss/refs/heads/main/img/troll.svg");
+} 
