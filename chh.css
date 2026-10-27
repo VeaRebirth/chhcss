@@ -2,7 +2,7 @@
  * @name ChhMembers
  * @author the chh guys
  * @description all of us
- * @version 1.4.2
+ * @version 1.6.0
 */
 
 /* //// fonts //// */
@@ -49,12 +49,9 @@
 	src: url("https://raw.githubusercontent.com/jelleejamm/chhcss/refs/heads/main/fnt/typewriter.ttf") format('truetype');
 }
 
-@font-face {
-	font-family: 'chancur';
-	src: url("https://raw.githubusercontent.com/jelleejamm/chhcss/refs/heads/main/fnt/chancur.ttf") format('truetype');
-}
-
 /* //// font end //// */
+
+/* THE CRACKHEAD HOUSE */
 
 .blobContainer_e5445c:has(.wrapper__6e9f8[data-list-item-id="guildsnav___1348278280360427581"]) {
 	box-shadow: 0 0 10px yellow;
@@ -112,6 +109,7 @@ li[data-author-id="1334564142891143259"] .headerText_c19a55 .username_c19a55 {
     font-size: 0;
 } 
 
+/* Make username appear consistent accross all servers; below comments kept for archival's sake*/
 li[data-author-id="1334564142891143259"] .headerText_c19a55 .username_c19a55::after {
     content: "Vea Ortis";
 	font-family: "Lucida Console", "lucidaconsolebu" !important;
@@ -137,6 +135,7 @@ li[data-author-id="1334564142891143259"] .clickable_ee71ee {
     display: none;
 }
 
+/* Add a personalized prefix to every message */
 li[data-author-id="1334564142891143259"] .messageContent_c19a55::before {
     display: inline-block;
     font-family: "MS Gothic";
@@ -147,6 +146,7 @@ li[data-author-id="1334564142891143259"] .messageContent_c19a55::before {
 
 /* ICE */
 
+/* The bulk of the style, make Ice's messages appear like paper that's been typed on */
 li[data-author-id="467270876673605642"] .message__5126c {
     -webkit-text-fill-color: black;
     font-weight: bold;
@@ -156,17 +156,37 @@ li[data-author-id="467270876673605642"] .message__5126c {
     background: linear-gradient( rgba(0, 0, 0, 0.20), rgba(0, 0, 0, 0.20) ), url("https://raw.githubusercontent.com/jelleejamm/chhcss/refs/heads/main/img/icepaper.png") !important;
     background-size: 15% !important;
     background-color: #000;
-    border: dashed black 1.5px;
+    border: dashed black 2px;
 
     & strong {
         font-weight: bolder;
     }
 }
+/* Porting over of Angela's code that makes her messages appear connected. Should be easiest to do on Ice, as
+it doesn't need much effort to look good */
+i[data-author-id="467270876673605642"]:not(:has(+ li .groupStart__5126c)) .groupStart__5126c,
+li[data-author-id="467270876673605642"]:not(:has(+ div .divider__5126c)) .groupStart__5126c,
+li[data-author-id="467270876673605642"]:not(:has(+ .scrollerSpacer__36d07)) .groupStart__5126c {
+    border-bottom-style: none
+}
 
+li[data-author-id="467270876673605642"] .message__5126c:not(.groupStart__5126c) {
+    border-bottom-style: none;
+    border-top-style: none;
+}
+
+li[data-author-id="467270876673605642"]:has(+ li .groupStart__5126c) .message__5126c,
+li[data-author-id="467270876673605642"]:has(+ .divider__5126c) .message__5126c,
+li[data-author-id="467270876673605642"]:has(+ .scrollerSpacer__36d07) .message__5126c {
+    border-bottom: dashed black 2px !important;
+}
+
+/* I'll be forreal I have no fucking clue what this does, but it'll probably break something if I remove it */
 li[data-author-id="467270876673605642"] .messageContent_c19a55 {
     vertical-align: middle;
 }
 
+/* In order: Un-round corners of all elements, underline timestamps, and remove unfitting elements. */
 li[data-author-id="467270876673605642"] * {
     border-radius: 0px;
 }
@@ -175,6 +195,7 @@ li[data-author-id="467270876673605642"] .timestamp_c19a55 {
     text-decoration: underline;
 }
 
+/* Remove unfitting elements */
 li[data-author-id="467270876673605642"] .avatar_c19a55,
 li[data-author-id="467270876673605642"] .reactions__23977,
 li[data-author-id="467270876673605642"] .timestampVisibleOnHover_c19a55,
@@ -182,7 +203,7 @@ li[data-author-id="467270876673605642"] .repliedMessageClickableSpine_c19a55 {
     display: none;
 }
 
-
+/* Add a personalized prefix to each individual message. */
 li[data-author-id="467270876673605642"] .messageContent_c19a55::before {
     display: inline-block;
     font-size: 1em;
@@ -190,10 +211,18 @@ li[data-author-id="467270876673605642"] .messageContent_c19a55::before {
     transform: scale(1.4, 0.9);
 }
 
-li[data-author-id="467270876673605642"] .markup__75297 {
-    left: -50px;
+/* Remove padding to eliminate negative space left by a removed PFP + Move reply text left slightly to hide prefix */
+/* Works much better than the last fix. Will apply further */
+
+li[data-author-id="467270876673605642"] .cozyMessage__5126c {
+    padding-left: 20px;
 }
 
+li[data-author-id="467270876673605642"] .repliedTextPreview_c19a55 .messageContent_c19a55 {
+    left: -10px !important;
+}
+
+/* Two blocks below perform some strange jankery in order to alter (EDITED) to (REVISED) */
 li[data-author-id="467270876673605642"] .edited_c19a55 {
     font-size: 0px;
 }
@@ -204,30 +233,23 @@ li[data-author-id="467270876673605642"] .edited_c19a55::after {
 	text-decoration: underline;
 }
 
-li[data-author-id="467270876673605642"] .edited_c19a55 {
-    font-size: 0px;
-}
-
+/* Recolor wrappers (pings, channelmentions, etc) to yellow for a highlighter look */
 li[data-author-id="467270876673605642"] .wrapper_f61d60 {
     background-color: rgba(255, 255, 0, 0.303);
 }
 
-li[data-author-id="467270876673605642"] .edited_c19a55::after {
-    content: "(REVISED)";
-	font-size: 10px;
-	text-decoration: underline;
-}
-
+/* Make spoiler-text into a solid black box. */
 li[data-author-id="467270876673605642"] .spoilerMarkdownContent__299eb {
     background-color: var(--__current--spoiler-background-color);
     filter: brightness(0%);
     border-radius: 0%;
 }
-/* V-Note: there has GOT to be a better way to do this */
 
-li[data-author-id="467270876673605642"] .originalLink_af017a {
-    border: black solid;
-    border-width: 4px 4px 10px 4px;
+/* Add a file-photo style border to images - should be modified to work with videos and other embeds, too */
+li[data-author-id="467270876673605642"] .mosaicItem__6c706 {
+    box-sizing: border-box;
+    border: #E1E1E1 solid;
+    border-width: 8px 8px 18px 8px;
 }
 
 /* ANGELA */
@@ -236,6 +258,7 @@ li[data-author-id="636050805103001650"] {
 	--text-subtle: black !important;
 }
 
+/* Apply custom background - Should be modified as to not break the below blocks - See next comment for details */
 li[data-author-id="636050805103001650"] .message__5126c {
     background-color: #C2AEEF;
     background-image: url('https://raw.githubusercontent.com/jelleejamm/chhcss/refs/heads/main/img/angelapolka.png') !important;
@@ -244,6 +267,8 @@ li[data-author-id="636050805103001650"] .message__5126c {
     border-radius: 15px;
 }
 
+/* The four blocks below perform some nifty jankery in order to make message groups appear connected */
+/* Misalisgns the background sometimes, but is very clever work. Should see about porting this to other members' styles - and fixing the background bug */
 li[data-author-id="636050805103001650"]:not(:has(+ li .groupStart__5126c)) .groupStart__5126c,
 li[data-author-id="636050805103001650"]:not(:has(+ div .divider__5126c)) .groupStart__5126c,
 li[data-author-id="636050805103001650"]:not(:has(+ .scrollerSpacer__36d07)) .groupStart__5126c {
@@ -269,6 +294,7 @@ li[data-author-id="636050805103001650"]:has(+ .scrollerSpacer__36d07) .message__
 	border-top-left-radius: 15px; border-top-right-radius: 15px;
 }
 
+/* Three blocks below all control the custom cursor when you hover over any message */
 li[data-author-id="636050805103001650"] {
 	cursor: url("https://raw.githubusercontent.com/jelleejamm/chhcss/refs/heads/main/img/cur-dreweehand.png"), auto;
 }
@@ -288,6 +314,8 @@ li[data-author-id="636050805103001650"] .originalLink_af017a:hover {
     cursor: url("https://raw.githubusercontent.com/jelleejamm/chhcss/refs/heads/main/img/cur-dreweehandpoint.png"), auto;
 }
 
+/* 5 blocks below apply and properly color custom font */
+/* Font has to be applied accross all possible markdown, headers especially will break it */
 li[data-author-id="636050805103001650"] .messageContent_c19a55 {
     color: black;
     font-family: 'workear', Arial, sans-serif !important;
@@ -325,6 +353,7 @@ li[data-author-id="636050805103001650"] .repliedTextPreview_c19a55
     font-family: 'workear', Arial, sans-serif !important;
 }
 
+/* 3 blocks below individually style replies */
 li[data-author-id="636050805103001650"] .repliedMessage_c19a55 .username_c19a55 {
 	border-radius: 25px;
 	border: 4px solid #DACCFF;
@@ -356,7 +385,7 @@ li[data-author-id="636050805103001650"] .reactionCount__23977,
 li[data-author-id="636050805103001650"] .altText__0f481 {
     color: black !important;
 }
-
+/* Fix aditional markdown */
 li[data-author-id="636050805103001650"] ._752971923a1e6683-codeActions {
     color: white !important;
 }
@@ -407,6 +436,7 @@ li[data-author-id="636050805103001650"] .headerText_c19a55 .badge__10651 {
     content: url("https://raw.githubusercontent.com/jelleejamm/chhcss/refs/heads/main/img/favicon-jj.png")
 }
 
+/* 2-boxes customize server tag */
 li[data-author-id="636050805103001650"] .headerText_c19a55 .tagText__10651 {
     font-size: 0;
 }
@@ -418,6 +448,7 @@ li[data-author-id="636050805103001650"] .headerText_c19a55 .tagText__10651::afte
 
 /* DERZOX */
 
+/* Bulk of the theme, make the text box resemble that of Rain World */
 li[data-author-id="714529404432154734"] .message__5126c {
     border-radius: 10px;
     background-color: black !important;
@@ -433,6 +464,24 @@ li[data-author-id="714529404432154734"] .markup__75297 h3
     font-family: "derzoxrain";
 }
 
+/* Fix negative space */
+li[data-author-id="714529404432154734"] .cozyMessage__5126c {
+    padding-left: 40px;
+}
+
+li[data-author-id="714529404432154734"] .repliedMessage_c19a55 {
+    left: 20px;
+}
+
+li[data-author-id="714529404432154734"] .repliedMessageClickableSpine_c19a55 {
+    width: 20px;
+    left: -20px;
+}
+
+
+/* Commented this out and left it here as an example of the nightmare we used to be doing */
+/* Do not do this! */
+/*
 li[data-author-id="714529404432154734"] .messageContent_c19a55,
 li[data-author-id="714529404432154734"] .header_c19a557,
 li[data-author-id="714529404432154734"] .visualMediaItemContainer_f4758a,
@@ -453,10 +502,11 @@ li[data-author-id="714529404432154734"] .repliedMessageClickableSpine_c19a55 {
     width: 1%;
     left: -8px;
 }
+*/
 
 li[data-author-id="714529404432154734"] .avatar_c19a55,
 li[data-author-id="714529404432154734"] .avatar_c19a55Decoration {
-    display: none;
+    display: none !important;
 }
 
 /* JOSE */
@@ -483,26 +533,14 @@ li[data-author-id="328514436245618699"] {
 */
 }
 
-/* CNTRPL */
-
-li[data-author-id="212160419769483265"] {
-    font-family: "M PLUS Rounded 1c", sans-serif;
-    border-left: 1px solid #B5EDFF;
-    background: linear-gradient(to right, #B5EDFF30, #B5EDFF00);
-}
-
-li[data-author-id="212160419769483265"] code {
-    background-color: #353748 !important;
-    font-weight: normal;
-    letter-spacing: 0px;
-}
-
 /* BOYCRAFT */
 
 li[data-author-id="844289867714134097"] {
 	font-family: "doctoramigo" !important;
 }
 
+/* Create the funny striped at the top of each message */
+/* Not quite unusual, but definitely spooky looking */
 li[data-author-id="844289867714134097"] .groupStart__5126c {
 	/* angela note jesus christ */
     background-image: linear-gradient(to bottom, 
@@ -530,6 +568,7 @@ li[data-author-id="844289867714134097"] .groupStart__5126c {
 	padding-bottom: -20px;
 }
 
+/* Ditto above, but modified to better accomodate a reply */
 li[data-author-id="844289867714134097"] .hasReply_c19a55 {
 	/* angela note jesus christ */
 	background-image: unset;
